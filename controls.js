@@ -1,7 +1,5 @@
 class Controls() {
     constructor(game) {
-        this.game = game;
-        
     }
 }
 
