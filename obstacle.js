@@ -8,3 +8,5 @@ class Obstacles() {
 x segundos de forma aleatoria. 
 como fazer os obtaculos girando na tela??????
 */
+
+/* 
