@@ -1,10 +1,13 @@
 /* ainda nao sei o que farei aqui */ 
+*{
+  background-color: lightpink ;
+}
 body {
     padding: 0;
     text-align: center;
   }
   .game-intro {
-    float: left;
+    float: center;
     padding: 0% 10%;
   }
   .game-intro p {
@@ -15,7 +18,14 @@ body {
     width: 350px;
   }
   .arrows-img {
-    width: 80px;
+    width: 100px;
+
+  }
+  .arrows-img-wasd{
+    width: 150px;
+  }
+  .spacebar-img {
+    width: 180px;
   }
   body button {
     font-size: 30px;
