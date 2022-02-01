@@ -5,7 +5,6 @@ class MyGame {
       this.weapon = null;
       this.obstacles = [];
       this.shots = [];
-      //this.bullets = [];
       this.background = new Image();
       this.frames = 0;
       this.x = 0;
@@ -14,7 +13,6 @@ class MyGame {
       this.canvasHeight = 800;
       this.intervalId = null;
       this.enemies = new Enemies(this);
-      this.shot = new Shot(this, 10, 10, 200, 200);
     }
     start() {
       this.weapon = new Weapon(this, this.x, 600, 120, 150);
@@ -31,11 +29,13 @@ class MyGame {
       this.drawBackground();
       this.weapon.draw();
       this.enemies.drawEnemies();
-      console.log(`this.shots`, this.shots)
+      
+      this.createShots();
       this.shots.forEach((shot) => {
-        shot.x++;
+        shot.fireShot();
         shot.draw();
       });
+
     }
   
    /*drawBabies() {
@@ -49,8 +49,14 @@ class MyGame {
    }
 
    createShots() {
-    this.shots.push(new Shots(this, 10, 10, 200, 200))
-   }
+		window.addEventListener('keydown', (e) => {
+			switch (e.code) {
+			  case 'KeyX':
+				this.shots.push(new Shot(this, this.weapon.x, this.weapon.y));
+			  break;
+			}
+		  });
+	}
    
 }
 

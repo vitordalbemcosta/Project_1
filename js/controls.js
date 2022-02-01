@@ -18,9 +18,6 @@ class Controls {
                         this.weapon.y += 30;
                     }
                     break;
-                case 'KeyX':
-                  this.game.createShots();
-                    break;
             }
         });
     }
