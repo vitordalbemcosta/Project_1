@@ -34,7 +34,7 @@ class Enemy {
         this.game.ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
 
     }
-
+    
 }
 
 /* criar variaveis pra dificuldade do jogo // 

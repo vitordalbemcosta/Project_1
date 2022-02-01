@@ -18,12 +18,15 @@ class Controls {
                         this.weapon.y += 30;
                     }
                     break;
-                // case 'Space': /* shot the babies */ 
-                //     break;
+                case 'KeyX':
+                  this.game.createShots();
+                    break;
             }
         });
     }
 }
+
+
 
 
 

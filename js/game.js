@@ -5,6 +5,7 @@ class MyGame {
       this.weapon = null;
       this.obstacles = [];
       this.shots = [];
+      //this.bullets = [];
       this.background = new Image();
       this.frames = 0;
       this.x = 0;
@@ -13,39 +14,44 @@ class MyGame {
       this.canvasHeight = 800;
       this.intervalId = null;
       this.enemies = new Enemies(this);
+      this.shot = new Shot(this, 10, 10, 200, 200);
     }
     start() {
       this.weapon = new Weapon(this, this.x, 600, 120, 150);
       const controls = new Controls(this);
       controls.keyboardEvents();
-
-
       this.intervalId = setInterval(() => {
           this.update();
       }, 1000 / 10);
+
+
    }
 
    update() {
       this.drawBackground();
       this.weapon.draw();
       this.enemies.drawEnemies();
-
-   }
-
-   drawBabies() {
+      console.log(`this.shots`, this.shots)
+      this.shots.forEach((shot) => {
+        shot.x++;
+        shot.draw();
+      });
+    }
+  
+   /*drawBabies() {
     //   this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
 
-   }
+   } */
    
    drawBackground() {
        this.background.src = './Images/background2 .jpeg';
        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
    }
-   drawObstacles() {
-    if (this.frames % 300 === 0) {
-      this.obstacles.push(new Obstacles(this));
-    }
-  }
+
+   createShots() {
+    this.shots.push(new Shots(this, 10, 10, 200, 200))
+   }
+   
 }
 
 
