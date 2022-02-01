@@ -12,7 +12,7 @@ class MyGame {
       this.canvasWidth = 1250;
       this.canvasHeight = 800;
       this.intervalId = null;
-      this.obstacles = new Obstacles(this);
+      this.enemies = new Enemies(this);
     }
     start() {
       this.weapon = new Weapon(this, this.x, 600, 120, 150);
@@ -22,23 +22,18 @@ class MyGame {
 
       this.intervalId = setInterval(() => {
           this.update();
-      }, 1000 / 60);
+      }, 1000 / 10);
    }
 
    update() {
-       this.drawBackground();
-       this.weapon.draw();
-       
-       this.obstacles.drawBabyOne(1000, 50)
-      //  this.obstacles.drawBabyTwo(1000, 100)
-      //  this.obstacles.drawBabyThree(1000, 200)
-      //  this.obstacles.drawBabyFour(1000, 300)
-      //  this.obstacles.drawBabyFive(1000, 400)
+      this.drawBackground();
+      this.weapon.draw();
+      this.enemies.drawEnemies();
+
    }
 
    drawBabies() {
-       this.Obstacles.babiesArray[Math.floor(Math.random() * Obstacles.babiesArray.length)];
-       this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
+    //   this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
 
    }
    
@@ -47,7 +42,7 @@ class MyGame {
        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
    }
    drawObstacles() {
-    if (this.frames % 500 === 0) {
+    if (this.frames % 300 === 0) {
       this.obstacles.push(new Obstacles(this));
     }
   }

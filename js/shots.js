@@ -3,3 +3,6 @@ class Shots {
         this.game = game;
     }
 }
+
+
+/* fazer amanha !! */
