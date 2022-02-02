@@ -1,16 +1,30 @@
+const enemiesImages = [
+    "../Images/baby1.png",
+    "../Images/baby2.png",
+    "../Images/baby3.png",
+    "../Images/baby4.png",
+    "../Images/baby5.png",
+    "../Images/pregnan1.png",
+    "../Images/pregnant2.png",
+    "../Images/pregnan3.png",
+    "../Images/pregnant4.png"
+]
+
 class Enemy {
-    constructor(game) {
+    constructor(game, index) {
+        this.index = index;
         this.game = game;
-        this.x = Math.floor(Math.random() * ((1200 - 850) + 680));
+        this.x = game.canvasWidth;
         this.y = Math.floor(Math.random() * 800);
-        this.width = 50;
-        this.height = 50;
-        this.babyImages = ["../Images/baby1.png", "../Images/baby2.png", "../Images/baby3.png", "../Images/baby4.png", "../Images/baby5.png", "../Images/pregnan1.png", "../Images/pregnant2.png", "../Images/pregnan3.png", "../Images/pregnant4.png"].map(name => {
-            const image = new Image();
-            image.src = name;
-            return image; 
-        });
-        this.image = this.babyImages[Math.floor(Math.random() * this.babyImages.length)];
+        this.width = 110;
+        this.height = 90;
+        // .map(name => {
+        //     const image = new Image();
+        //     image.src = name;
+        //     return image; 
+        // });
+        // this.image = this.babyImages[Math.floor(Math.random() * this.babyImages.length)];
+        this.image = new Image();
     }
 
     left() {
@@ -30,11 +44,11 @@ class Enemy {
     }
 
     drawEnemy() {
-        this.x -= 2;
+        this.image.src = enemiesImages[this.index];
+        // this.x -= 3;
         this.game.ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
-
     }
-    
+   
 }
 
 /* criar variaveis pra dificuldade do jogo // 

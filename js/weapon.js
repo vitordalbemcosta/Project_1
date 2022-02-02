@@ -17,7 +17,7 @@ class Weapon {
 
 
     draw() {
-        this.img.src = '/Images/maozinha.png';
+        this.img.src = '../Images/pilula-removebg-preview.png';
         this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 }

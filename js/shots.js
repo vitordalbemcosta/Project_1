@@ -3,19 +3,22 @@ class Shot {
 		this.game = game;
 		this.x = x;
 		this.y = y + 50;
-		this.width = 50;
-		this.height = 50;
-        this.speed = 30;
-        this.img = new Image();
+		this.width = 40;
+		this.height = 10;
+    //this.img = new Image();
+    // const imgObj = new Image();
+    // imgObj.addEventListener('load', () => {
+    //     this.img = imgObj;
+    //     this.draw();
+    // })
+    // imgObj.src = "../Images/poop.png";
 	}
 
     draw() {
-        this.img.src = "/Images/poop.png";
-        this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    }
-
-    fireShot() {
-        this.x += this.speed;
+      this.game.ctx.fillStyle = 'red';
+      this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+        //this.img.src = "../Images/poop.png";
+        //this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
     left() {
@@ -33,14 +36,14 @@ class Shot {
         return this.y + this.height;
       }
     
-      crashWith(enemy) {
+      crashWith(Enemy) {
         return !(
-          this.bottom() < enemy.top() ||
-          this.top() > enemy.bottom() ||
-          this.right() < enemy.left() ||
-          this.left() > enemy.right()
+          this.bottom() < Enemy.top() ||
+          this.top() > Enemy.bottom() ||
+          this.right() < Enemy.left() ||
+          this.left() > Enemy.right()
         );
- XX     }
+      }
     
 }
 /* fazer amanha !! */

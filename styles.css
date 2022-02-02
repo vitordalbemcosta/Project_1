@@ -8,27 +8,32 @@ body {
   }
   .game-intro {
     float: center;
-    padding: 0% 10%;
+    padding: 10px 10px 10px 20px;
   }
   .game-intro p {
     font-size: 25px;
     font-family: "Comic Sans"
   }
   .logo-img {
-    width: 350px;
+    width: 950px;
   }
   .arrows-img {
-    width: 100px;
+    width: 150px;
 
   }
   .arrows-img-wasd{
-    width: 150px;
+    width: 250px;
   }
-  .spacebar-img {
+  .x-img {
     width: 180px;
+  
   }
   body button {
-    font-size: 30px;
+    display: flex;
+    margin-left: 770px;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
     background-color: black;
     color: #fff;
     padding: 20px 40px;
@@ -39,5 +44,5 @@ body {
   }
   #game-board {
       float: center;
-      padding: 20px 15
+      padding: 20px 15px;
   }
