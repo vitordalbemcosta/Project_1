@@ -4,7 +4,6 @@ class Controls {
         this.weapon = this.game.weapon;
     }
     
-    
     keyboardEvents() {
         window.addEventListener('keydown', (e) => {
             switch (e.code) {
@@ -22,17 +21,3 @@ class Controls {
         });
     }
 }
-
-
-
-
-
-/* nesta classe vou ter que adicionar os eventos 
-do keyboard com o addEventListener keydown. 
-A arminha vai ter duas cases uma arrow top e uma 
-arrow bottom. */ 
-
-/* shoot key vai ser no espaco */
-
-/* tambem terei que adicinar o eventListener de 
-usar o espaco para atirar com a arma */

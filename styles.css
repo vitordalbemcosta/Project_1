@@ -1,18 +1,28 @@
-/* ainda nao sei o que farei aqui */ 
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
 *{
-  background-color: lightpink ;
+  font-family: 'Schoolbell', cursive;
 }
 body {
     padding: 0;
     text-align: center;
+    background-image: url(/Images/backgroundforpage.jpg);
+    background-repeat: repeat-x;
+  
   }
   .game-intro {
     float: center;
     padding: 10px 10px 10px 20px;
   }
   .game-intro p {
-    font-size: 25px;
-    font-family: "Comic Sans"
+    font-size: 60px;
+    font-family: 'Schoolbell', cursive;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+  
   }
   .logo-img {
     width: 950px;
@@ -30,7 +40,7 @@ body {
   }
   body button {
     display: flex;
-    margin-left: 770px;
+    margin-left: 800px;
     justify-content: center;
     align-items: center;
     font-size: 50px;
@@ -45,4 +55,14 @@ body {
   #game-board {
       float: center;
       padding: 20px 15px;
+      background-image: url(/Images/backgroundforpage.jpg);
+      
+  }
+  .blinking_button {
+    animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }

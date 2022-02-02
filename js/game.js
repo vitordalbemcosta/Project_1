@@ -12,12 +12,12 @@ class MyGame {
       this.canvasWidth = 1250;
       this.canvasHeight = 800;
       this.intervalId = 0;
-      // this.enemies = new Enemies(this);
       this.enemies = [];
+      this.score = 0;
       
     }
     start() {
-      this.weapon = new Weapon(this, this.x, 600, 120, 150);
+      this.weapon = new Weapon(this, this.x, 600, 180, 180);
       const controls = new Controls(this);
       controls.keyboardEvents();
 
@@ -35,34 +35,26 @@ class MyGame {
         enemy.drawEnemy();
       });
 
-      // this.enemies.drawEnemies();
       this.createShots();
-      this.shots.forEach((shot) => {
+      this.shots.forEach((shot, index) => {
         if ( shot.x < 1300) {
           shot.x += 40;
           shot.draw();
         } else {
-          this.shots.splice(shot)
+          this.shots.splice(index, 1)
         }
-        //this.checkGameOver();
       });
-      //this.colision(this.shots, this.enemies); -------> nao consegui fazer colidir
-      this.frames++;
+
+      this.checkImpact();
+      if(this.checkImpact()) {
+        this.drawScore();
+      }
+      this.frames ++;
       this.drawScore();
 
     }
     
-    /*colision(shots, enemies) {
-      shots.map(s => {
-        enemies.map(e => {
-          if (s.x === e.x && s.y === e.y){
-            MyGame....
-          }
-        });
-      });
-    } 
-    */
-   
+  
    drawBackground() {
        this.background.src = '../Images/bercario.jpeg';
        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
@@ -85,44 +77,27 @@ class MyGame {
     }
 	}
 
-  // createObstacles() {
-  //   if (this.frames % 300 === 0) {
-  //     this.obstacles.push(new Obstacle(this));
-  //   }
-  // }
-
-  /* checkGameOver() {
-    const weapon = this.weapon;
-    const crashed = this.obstacles.some(function (enemies) {
-      return enemies.crashWith(enemies);
-    });
-    if (crashed) {
-      this.stop();
-    }
-  }
-  */
-  checkGameOver() {
-    const enemies = this.enemy;
-    const crashed = this.enemies.some(function (obstacle) {
-      return enemies.crashWith(obstacle);
-    });
-    if (crashed) {
-      this.stop();
-      this.clear();
-    }
+  checkImpact() {
+    for (let e = 0; e < this.enemies.length; e++) {
+      for (let s = 0; s < this.shots.length; s++) {
+          if (this.shots[s].crashWith(this.enemies[e])) {
+            this.shots.splice(s, 1);
+            this.enemies.splice(e, 1);            
+          }
+        }
+      }
 
   }
-
-  
 
   stop() {
     clearInterval(this.intervalId);
   }
 
   drawScore() {
-    let score = Math.floor(this.frames);
-    this.ctx.font = '45px serif';
-    this.ctx.fillStyle = 'dark red';
-    this.ctx.fillText(`Choices: ${score}`, 200, 100);
+    let score = Math.floor(this.score);
+    score++;
+    this.ctx.font = '60px serif';
+    this.ctx.fillStyle = 'pink';
+    this.ctx.fillText(`Terminations: ${score}`, 80, 100);
   } 
 }

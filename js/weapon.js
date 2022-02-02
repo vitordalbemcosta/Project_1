@@ -8,13 +8,6 @@ class Weapon {
         this.img = new Image();
         this.canvas;
     }
-    
-    
-    /* crashWith eu quero que tenha impacto
-    com a arma e tambem o impacto do obstaculo
-    com o o final da tela na esquerda */
-
-
 
     draw() {
         this.img.src = '../Images/pilula-removebg-preview.png';
@@ -22,11 +15,3 @@ class Weapon {
     }
 }
 
-
-
-
-
-/* nesta classe vou criar a imagem da arminha
-dentro desta classe vou ter que fazer o draw dela,
-tenho que descobrir como fazer a arminha atirar e que esse tiro
-tenha colisao com o obtaculo */
