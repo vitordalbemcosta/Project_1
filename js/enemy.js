@@ -15,7 +15,7 @@ class Enemy {
         this.index = index;
         this.game = game;
         this.x = game.canvasWidth;
-        this.y = Math.floor(Math.random() * 800);
+        this.y = Math.floor(Math.random() * 700);
         this.width = 130;
         this.height = 100;
         this.image = new Image();

@@ -14,6 +14,7 @@ class MyGame {
       this.intervalId = 0;
       this.enemies = [];
       this.score = 0;
+      this.musicWhenLose = new Audio('./docs/assets/sounds/crying.mp3')
       this.musicBackground = new Audio('./docs/assets/sounds/babysong.mp3');
       this.musicReload = new Audio('./docs/assets/sounds/gunreload.mp3');
       this.musicShot = new Audio('./docs/assets/sounds/gunshot.mp3');
@@ -81,7 +82,7 @@ class MyGame {
 
   scoreToWin() {
     this.score ++;
-    if(this.score === 15){
+    if(this.score === 20){
       this.stopToWin();
     }
   }
@@ -123,17 +124,18 @@ class MyGame {
     this.ctx.fillText("Population Decrease: SUCCESS!!! ", 120, 350);
     this.stop();
     this.musicBackground.play();
+
   }
 
   stopToLose(enemy) {
-    enemy.x -= 2.5;
+    enemy.x -= 3.5;
     if(enemy.x === 0){ 
     this.ctx.font = '100px schoolbell';
     this.ctx.fillStyle = "red";
     this.ctx.fillText("YOU HAVE LOST THE GAME", 150, 330);
     this.ctx.fillText("You STINK", 400, 500);
     this.stop();
-    this.musicBackground.play();
+    this.musicWhenLose.play();
+    }
   }
-}
 }
