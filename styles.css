@@ -26,6 +26,8 @@ body {
   }
   .logo-img {
     width: 950px;
+    border-radius: 100px;
+    margin-bottom: 10px;
   }
   .arrows-img {
     width: 150px;
@@ -40,7 +42,7 @@ body {
   }
   body button {
     display: flex;
-    margin-left: 800px;
+    margin-left: 500px;
     justify-content: center;
     align-items: center;
     font-size: 50px;

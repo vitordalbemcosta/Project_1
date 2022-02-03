@@ -14,9 +14,11 @@ class MyGame {
       this.intervalId = 0;
       this.enemies = [];
       this.score = 0;
+      this.musicBackground = new Audio('/sounds/Baby Chorus - Justin Bieber.mp3')
       
     }
     start() {
+      this.musicBackground.play();
       this.weapon = new Weapon(this, this.x, 600, 180, 180);
       const controls = new Controls(this);
       controls.keyboardEvents();
@@ -31,7 +33,7 @@ class MyGame {
       this.weapon.draw();
       this.createEnemy();
       this.enemies.forEach((enemy) => {
-        enemy.x --;
+        this.stopToLose(enemy);
         enemy.drawEnemy();
       });
 
@@ -51,10 +53,8 @@ class MyGame {
       }
       this.frames ++;
       this.drawScore();
-
     }
     
-  
    drawBackground() {
        this.background.src = '../Images/bercario.jpeg';
        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
@@ -77,27 +77,50 @@ class MyGame {
     }
 	}
 
+  scoreToWin() {
+    this.score ++;
+    if(this.score === 15){
+      this.stopToWin();
+    }
+  }
+
   checkImpact() {
     for (let e = 0; e < this.enemies.length; e++) {
       for (let s = 0; s < this.shots.length; s++) {
           if (this.shots[s].crashWith(this.enemies[e])) {
             this.shots.splice(s, 1);
-            this.enemies.splice(e, 1);            
+            this.enemies.splice(e, 1);
+            this.scoreToWin();
+
           }
         }
       }
-
   }
-
-  stop() {
-    clearInterval(this.intervalId);
-  }
-
+  
   drawScore() {
     let score = Math.floor(this.score);
-    score++;
     this.ctx.font = '60px serif';
     this.ctx.fillStyle = 'pink';
     this.ctx.fillText(`Terminations: ${score}`, 80, 100);
   } 
+
+  reset(){
+    this.enemies = [];
+    this.shots = [];
+    this.score = 0;
+  }    
+  stopToWin() {
+    alert("YOU WON THE GAME");
+    alert("Population Decrease: SUCCESS!!! ");
+    this.reset();
+  }
+
+  stopToLose(enemy) {
+    enemy.x -= 2.5;
+    if(enemy.x === 0){ 
+    alert("YOU HAVE LOST THE GAME");
+    alert("You STINK");
+    this.reset();
+  }
+}
 }

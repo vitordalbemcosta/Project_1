@@ -27,12 +27,12 @@ class Shot {
         return this.y + this.height;
       }
     
-      crashWith(shots) {
+      crashWith(obstacle) {
         return !(
-          this.bottom() < shots.top() ||
-          this.top() > shots.bottom() ||
-          this.right() < shots.left() ||
-          this.left() > shots.right()
+          this.bottom() < obstacle.top() ||
+          this.top() > obstacle.bottom() ||
+          this.right() < obstacle.left() ||
+          this.left() > obstacle.right()
         );
       }
     
