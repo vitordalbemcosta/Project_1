@@ -15,8 +15,8 @@ class MyGame {
       this.enemies = [];
       this.score = 0;
       this.musicBackground = new Audio('./docs/assets/sounds/babysong.mp3');
-      this.musicReload = new Audio('/docs/assets/sounds/gun_reload.mp3');
-      this.musicShot = new Audio('/docs/assets/sounds/gun_shot.mp3');
+      this.musicReload = new Audio('.//docs/assets/sounds/gun_reload.mp3');
+      this.musicShot = new Audio('./docs/assets/sounds/gun_shot.mp3');
       
     }
     start() {
