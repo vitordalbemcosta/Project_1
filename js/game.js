@@ -128,7 +128,7 @@ class MyGame {
   }
 
   stopToLose(enemy) {
-    enemy.x -= 3.5;
+    enemy.x -= 2.5;
     if(enemy.x === 0){ 
     this.ctx.font = '100px schoolbell';
     this.ctx.fillStyle = "red";
