@@ -14,9 +14,9 @@ class MyGame {
       this.intervalId = 0;
       this.enemies = [];
       this.score = 0;
-      this.musicBackground = new Audio('/docs/assets/sounds/Baby Chorus - Justin Bieber.mp3')
-      this.musicReload = new Audio('/docs/assets/sounds/reload gun sound effects.mp3')
-      this.musicShot = new Audio('/docs/assets/sounds/Gun shoot - Sound effect-[AudioTrimmer.com].mp3')
+      this.musicBackground = new Audio('./docs/assets/sounds/Baby Chorus - Justin Bieber.mp3')
+      this.musicReload = new Audio('./docs/assets/sounds/reload gun sound effects.mp3')
+      this.musicShot = new Audio('./docs/assets/sounds/Gun shoot - Sound effect-[AudioTrimmer.com].mp3')
       
     }
     start() {
