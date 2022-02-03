@@ -14,15 +14,16 @@ class MyGame {
       this.intervalId = 0;
       this.enemies = [];
       this.score = 0;
-      this.musicBackground = new Audio('/sounds/Baby Chorus - Justin Bieber.mp3')
+      this.musicBackground = new Audio('/docs/assets/sounds/Baby Chorus - Justin Bieber.mp3')
+      this.musicReload = new Audio('/docs/assets/sounds/reload gun sound effects.mp3')
+      this.musicShot = new Audio('/docs/assets/sounds/Gun shoot - Sound effect-[AudioTrimmer.com].mp3')
       
     }
     start() {
-      this.musicBackground.play();
       this.weapon = new Weapon(this, this.x, 600, 180, 180);
       const controls = new Controls(this);
       controls.keyboardEvents();
-
+      this.musicReload.play();
       this.intervalId = setInterval(() => {
         this.update();
       }, 1000 / 60);
@@ -56,7 +57,7 @@ class MyGame {
     }
     
    drawBackground() {
-       this.background.src = '../Images/bercario.jpeg';
+       this.background.src = './docs/assets/Images/bercario.jpeg';
        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
    }
 
@@ -65,7 +66,8 @@ class MyGame {
 			switch (e.code) {
 			  case 'KeyX':
 				this.shots.push(new Shot(this, this.weapon.x, this.weapon.y));
-			  break;
+			  this.musicShot.play();
+        break;
 			}
 		});
 	}
@@ -108,19 +110,30 @@ class MyGame {
     this.enemies = [];
     this.shots = [];
     this.score = 0;
-  }    
+  }
+  
+  stop(){
+    clearInterval(this.intervalId);
+  }
+
   stopToWin() {
-    alert("YOU WON THE GAME");
-    alert("Population Decrease: SUCCESS!!! ");
-    this.reset();
+    this.ctx.font = '80px schoolbell';
+    this.ctx.fillStyle = "red";
+    this.ctx.fillText("YOU WON THE GAME", 280, 500);
+    this.ctx.fillText("Population Decrease: SUCCESS!!! ", 120, 350);
+    this.stop();
+    this.musicBackground.play();
   }
 
   stopToLose(enemy) {
     enemy.x -= 2.5;
     if(enemy.x === 0){ 
-    alert("YOU HAVE LOST THE GAME");
-    alert("You STINK");
-    this.reset();
+    this.ctx.font = '100px schoolbell';
+    this.ctx.fillStyle = "red";
+    this.ctx.fillText("YOU HAVE LOST THE GAME", 150, 330);
+    this.ctx.fillText("You STINK", 400, 500);
+    this.stop();
+    this.musicBackground.play();
   }
 }
 }

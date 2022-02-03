@@ -40,6 +40,9 @@ body {
     width: 180px;
   
   }
+  a {
+    text-decoration: none;
+  }
   body button {
     display: flex;
     margin-left: 500px;
@@ -57,7 +60,7 @@ body {
   #game-board {
       float: center;
       padding: 20px 15px;
-      background-image: url(/Images/backgroundforpage.jpg);
+      background-image: url(./docs/assets/Images/backgroundforpage.jpg);
       
   }
   .blinking_button {
