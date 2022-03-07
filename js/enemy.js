@@ -1,13 +1,13 @@
 const enemiesImages = [
-    "./docs/assets/Images/baby1.png",
-    "./docs/assets/Images/baby2.png",
-    "./docs/assets/Images/baby3.png",
-    "./docs/assets/Images/baby4.png",
-    "./docs/assets/Images/baby5.png",
-    "./docs/assets/Images/pregnan1.png",
-    "./docs/assets/Images/pregnant2.png",
-    "./docs/assets/Images/pregnan3.png",
-    "./docs/assets/Images/pregnant4.png"
+    "./docs/assets/Images/python-symbol.png",
+    "./docs/assets/Images/csharp.png",
+    "./docs/assets/Images/ruby.png",
+    "./docs/assets/Images/java.png",
+    "./docs/assets/Images/php.png",
+    "./docs/assets/Images/vue.png",
+    "./docs/assets/Images/angular.png",
+    "./docs/assets/Images/c.png",
+    "./docs/assets/Images/wordpress.png"
 ]
 
 class Enemy {

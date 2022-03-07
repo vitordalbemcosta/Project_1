@@ -14,8 +14,8 @@ class MyGame {
       this.intervalId = 0;
       this.enemies = [];
       this.score = 0;
-      this.musicWhenLose = new Audio('./docs/assets/sounds/crying.mp3')
-      this.musicBackground = new Audio('./docs/assets/sounds/babysong.mp3');
+      this.musicWhenLose = new Audio('./docs/assets/sounds/youlose.mp3')
+      this.musicBackground = new Audio('./docs/assets/sounds/youwin.mp3');
       this.musicReload = new Audio('./docs/assets/sounds/gunreload.mp3');
       this.musicShot = new Audio('./docs/assets/sounds/gunshot.mp3');
       
@@ -58,7 +58,7 @@ class MyGame {
     }
     
    drawBackground() {
-       this.background.src = './docs/assets/Images/bercario.jpeg';
+       this.background.src = "./docs/assets/Images/backgroundgame.webp";
        this.ctx.drawImage(this.background, this.x, this.y, this.canvasWidth, this.canvasHeight)
    }
 
@@ -121,7 +121,7 @@ class MyGame {
     this.ctx.font = '80px schoolbell';
     this.ctx.fillStyle = "red";
     this.ctx.fillText("YOU WON THE GAME", 280, 500);
-    this.ctx.fillText("Population Decrease: SUCCESS!!! ", 120, 350);
+    this.ctx.fillText("PROGRAMMING HAS BEEN SAVED!!!! ", 120, 350);
     this.stop();
     this.musicBackground.play();
 
