@@ -1,5 +1,5 @@
 window.onload = () => {
-  document.getElementById('start-game').onclick = () => {
+  document.getElementById("start-game").onclick = () => {
     startGame();
   };
 
@@ -7,4 +7,4 @@ window.onload = () => {
     const game = new MyGame();
     game.start();
   }
-}; 
+};

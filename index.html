@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Prevention</title>
-
-</head>
-<body>
-    <div class="game-intro"> 
-        <p>Press the <strong>W</strong> and <strong>S</strong> keys to control the <strong>Powerful EDITOR</strong> <br> <strong>Key "X"</strong> to <strong>terminate</strong> the enemies</p> 
-        <img src="./docs/assets/Images/ilovereact.jpeg" alt="" class="logo-img">
-        <a href="#game-board">
-        <button class="blinking_button" id="start-game">SAVE PROGRAMMING NOW</button> 
-        </a>
-        <img src="./docs/assets/Images/arrows no bg.png" class="arrows-img" alt="playable arrows">
-        <img src="./docs/assets/Images/KEYS-removebg-preview.png" class="arrows-img-wasd" alt="playable arrows">
-        <img src="./docs/assets/Images/letter_x-removebg-preview.png" class="x-img" alt="x icon">
+  </head>
+  <body>
+    <div class="game-intro">
+      <p>
+        Press the <strong>W</strong> and <strong>S</strong> keys to control the
+        <strong>Powerful EDITOR</strong> <br />
+        <strong>Key "X"</strong> to <strong>terminate</strong> the enemies
+      </p>
+      <img src="./docs/assets/Images/matrix_bg.jpeg" alt="" class="logo-img" />
+      <a href="#game-board">
+        <button class="blinking_button" id="start-game">
+          SAVE PROGRAMMING NOW
+        </button>
+      </a>
+      <img
+        src="./docs/assets/Images/arrows no bg.png"
+        class="arrows-img"
+        alt="playable arrows"
+      />
+      <img
+        src="./docs/assets/Images/KEYS-removebg-preview.png"
+        class="arrows-img-wasd"
+        alt="playable arrows"
+      />
+      <img
+        src="./docs/assets/Images/letter_x-removebg-preview.png"
+        class="x-img"
+        alt="x icon"
+      />
     </div>
     <div id="game-board">
-        <canvas id="canvas" width="1250" height="800" class="canvas-classe" ></canvas>
+      <canvas
+        id="canvas"
+        width="1250"
+        height="800"
+        class="canvas-classe"
+      ></canvas>
     </div>
     <script type="text/javascript" src="./js/shots.js"></script>
     <script type="text/javascript" src="./js/enemies.js"></script>
@@ -29,5 +51,5 @@
     <script type="text/javascript" src="./js/weapon.js"></script>
     <script type="text/javascript" src="./js/game.js"></script>
     <script type="text/javascript" src="./js/index.js"></script>
-</body>
+  </body>
 </html>
