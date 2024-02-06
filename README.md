@@ -8,10 +8,6 @@ This is my Project #1 from full stack web development course at Iron Hack Lisbon
 
 Final product here: https://vitordalbemcosta.github.io/Project_1/#game-board
 
-![project](![image](https://github.com/vitordalbemcosta/Project_1/assets/95107819/a30529bb-edfa-4da5-8eb3-93bf724e9783)
-)
-
-
 ## 📥 Installing and executing
 
 **Clone the repository:**
